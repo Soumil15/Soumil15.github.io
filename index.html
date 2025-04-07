@@ -1,12 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Your Name</title>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name | Software Engineer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #111;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    section {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .project {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #eee;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, I'm Your Name 👋</h1>
-  <p>I'm a software engineer with a passion for building cool stuff.</p>
-  <p>Check out my <a href="https://github.com/your-username">GitHub</a>.</p>
+
+  <header>
+    <h1>Your Name</h1>
+    <p>Software Engineer | Building cool stuff with code</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>
+      I'm a recent software engineering graduate passionate about full-stack development,
+      clean code, and solving real-world problems. I love working with Java, React, and anything cloud.
+    </p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Secure File Transfer App</h3>
+        <p>A Java Spring + React app for encrypted file uploads and downloads.</p>
+        <a href="https://github.com/yourusername/secure-file-transfer">View on GitHub</a>
+      </div>
+      <div class="project">
+        <h3>AI Realtor Assistant</h3>
+        <p>An AI-powered lead management tool using Zapier, PostgreSQL, and Node.js.</p>
+        <a href="https://github.com/yourusername/ai-realtor">View on GitHub</a>
+      </div>
+      <!-- Add more projects here -->
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <p>Java | React | Spring Boot | Node.js | PostgreSQL | Git | REST APIs | Firebase</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername">yourusername</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">yourprofile</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Your Name. Built with ❤️ and GitHub Pages.</p>
+  </footer>
+
 </body>
 </html>
