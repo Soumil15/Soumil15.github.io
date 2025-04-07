@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>Soumil Thete | Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0e1012;
-      --text: #ffffff;
-      --card: #1a1d21;
-      --primary: #3b82f6;
-      --tag: #2e333a;
+      --bg: #0a192f;
+      --surface: #112240;
+      --text: #ccd6f6;
+      --text-light: #8892b0;
+      --accent: #64ffda;
+      --accent-bg: #233554;
     }
 
     * {
@@ -21,10 +23,15 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Manrope', sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--accent);
     }
 
     header {
@@ -33,14 +40,14 @@
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.75rem;
       font-weight: 800;
     }
 
     header p {
-      color: #aaa;
+      color: var(--text-light);
       margin-top: 0.5rem;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
 
     section {
@@ -60,28 +67,31 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
+      margin-top: 2rem;
     }
 
     .card {
-      background-color: var(--card);
+      background-color: var(--surface);
       padding: 1.5rem;
       border-radius: 1rem;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 20px rgba(100, 255, 218, 0.05);
       transition: transform 0.2s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 6px 24px rgba(100, 255, 218, 0.1);
     }
 
     .card h3 {
       font-size: 1.2rem;
       font-weight: 600;
+      margin-bottom: 0.5rem;
     }
 
     .card p {
-      color: #bbb;
-      margin: 0.5rem 0 1rem;
+      color: var(--text-light);
+      margin-bottom: 1rem;
     }
 
     .tags {
@@ -91,40 +101,42 @@
     }
 
     .tag {
-      background: var(--tag);
-      padding: 0.25rem 0.6rem;
+      background: var(--accent-bg);
+      color: var(--accent);
+      padding: 0.25rem 0.7rem;
       border-radius: 999px;
       font-size: 0.75rem;
-      color: #ccc;
+      font-weight: 600;
     }
 
     .link {
       display: inline-block;
       margin-top: 1rem;
-      color: var(--primary);
-      text-decoration: none;
+      color: var(--accent);
       font-weight: 600;
+      font-size: 0.9rem;
     }
 
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      color: #555;
+      color: var(--text-light);
       font-size: 0.9rem;
     }
+
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Your Name</h1>
-    <p>Software Engineer • Full-stack Developer • Cloud Enthusiast</p>
+    <h1>Soumil Thete</h1>
+    <p>Software Engineer • Full-stack Developer • ML Enthusiast</p>
   </header>
 
   <section>
     <h2>Portfolio</h2>
-    <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">
-      Here's some of my recent work across web, AI, and full-stack projects.
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem; color: var(--text-light);">
+      Some recent work across AI, full-stack apps, and automation.
     </p>
     <div class="projects">
 
@@ -136,38 +148,36 @@
           <span class="tag">Spring</span>
           <span class="tag">React</span>
         </div>
-        <a class="link" href="https://github.com/yourusername/secure-file-transfer" target="_blank">View on GitHub</a>
+        <a class="link" href="https://github.com/yourusername/secure-file-transfer" target="_blank">View on GitHub →</a>
       </div>
 
       <div class="card">
         <h3>AI Realtor Assistant</h3>
-        <p>Lead generation tool powered by Zapier, PostgreSQL & Node.js backend.</p>
+        <p>Lead management tool using Zapier, Node.js & PostgreSQL.</p>
         <div class="tags">
           <span class="tag">Node.js</span>
           <span class="tag">Zapier</span>
           <span class="tag">PostgreSQL</span>
         </div>
-        <a class="link" href="https://github.com/yourusername/ai-realtor" target="_blank">View on GitHub</a>
+        <a class="link" href="https://github.com/yourusername/ai-realtor" target="_blank">View on GitHub →</a>
       </div>
 
       <div class="card">
-        <h3>Personal Productivity Bot</h3>
-        <p>Chatbot that arranges meetings and schedules tasks using Botpress & APIs.</p>
+        <h3>Productivity Bot</h3>
+        <p>Botpress-based assistant that schedules tasks and books meetings.</p>
         <div class="tags">
           <span class="tag">Botpress</span>
           <span class="tag">JavaScript</span>
           <span class="tag">APIs</span>
         </div>
-        <a class="link" href="https://github.com/yourusername/productivity-bot" target="_blank">View on GitHub</a>
+        <a class="link" href="https://github.com/yourusername/productivity-bot" target="_blank">View on GitHub →</a>
       </div>
-
-      <!-- Add more cards here -->
 
     </div>
   </section>
 
   <footer>
-    © 2025 Your Name — Designed with ❤️ and deployed on GitHub Pages.
+    © 2025 Your Name — Built with ❤️ and GitHub Pages
   </footer>
 
 </body>
