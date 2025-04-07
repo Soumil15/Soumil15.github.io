@@ -7,12 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --light: #ffffff;
-      --dark: #111111;
-      --gray: #f6f6f6;
-      --accent: #1f1f1f;
-      --link: #000000;
-      --tag-bg: #efefef;
+      --header-bg: #f5f7fa;
+      --card-bg: #fafafa;
+      --card-shadow: rgba(0, 0, 0, 0.08);
+      --divider: #111;
+      --tag-bg: #e0e0e0;
+      --accent: #111;
+      --text-light: #555;
     }
 
     * {
@@ -21,17 +22,40 @@
       box-sizing: border-box;
     }
 
-    body {
-      font-family: 'Manrope', sans-serif;
-      background-color: var(--light);
-      color: var(--dark);
-      line-height: 1.7;
+    html {
+      scroll-behavior: smooth;
     }
 
+    body {
+      font-family: 'Manrope', sans-serif;
+      background-color: white;
+      color: var(--accent);
+      line-height: 1.6;
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .fade-in-delay-1 { animation-delay: 0.2s; }
+    .fade-in-delay-2 { animation-delay: 0.4s; }
+    .fade-in-delay-3 { animation-delay: 0.6s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Header Section */
     header {
-      background: var(--light);
+      background: var(--header-bg);
       text-align: center;
-      padding: 4rem 1rem 2rem;
+      padding: 4rem 1rem 3rem;
       border-bottom: 1px solid #ddd;
     }
 
@@ -43,7 +67,7 @@
     header p {
       margin-top: 0.5rem;
       font-size: 1.1rem;
-      color: #555;
+      color: var(--text-light);
     }
 
     section {
@@ -54,36 +78,49 @@
 
     h2 {
       font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
+      font-weight: 700;
       text-align: center;
+      margin-bottom: 0.5rem;
     }
 
     .divider {
-      width: 50px;
+      width: 60px;
       height: 3px;
-      background: var(--dark);
+      background: var(--divider);
       margin: 0.5rem auto 2rem;
-      border-radius: 2px;
+      border-radius: 3px;
+      animation: growBar 1s ease-out;
+    }
+
+    @keyframes growBar {
+      from { width: 0; }
+      to { width: 60px; }
+    }
+
+    .intro-text {
+      text-align: center;
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
     }
 
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
     }
 
     .card {
-      background-color: var(--gray);
+      background-color: var(--card-bg);
       padding: 1.5rem;
       border-radius: 1rem;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s ease;
+      box-shadow: 0 6px 16px var(--card-shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     }
 
     .card h3 {
@@ -93,7 +130,7 @@
     }
 
     .card p {
-      color: #555;
+      color: var(--text-light);
       margin-bottom: 1rem;
     }
 
@@ -107,18 +144,18 @@
     .tag {
       background: var(--tag-bg);
       padding: 0.3rem 0.75rem;
-      border-radius: 20px;
+      border-radius: 999px;
       font-size: 0.75rem;
       font-weight: 600;
-      color: #444;
+      color: #333;
     }
 
     .link {
       display: inline-block;
-      color: var(--link);
+      color: var(--accent);
       font-weight: 600;
-      text-decoration: none;
       font-size: 0.9rem;
+      text-decoration: none;
     }
 
     .link:hover {
@@ -137,20 +174,18 @@
 </head>
 <body>
 
-  <header>
+  <header class="fade-in">
     <h1>Soumil Thete</h1>
     <p>Software Engineer • Full-stack Developer • ML Enthusiast</p>
   </header>
 
   <section>
-    <h2>Portfolio</h2>
+    <h2 class="fade-in">Portfolio</h2>
     <div class="divider"></div>
-    <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem; color: #666;">
-      Some recent work across AI, full-stack applications, and automation tools.
-    </p>
-    <div class="projects">
+    <p class="intro-text fade-in">Some recent work across AI, full-stack applications, and automation tools.</p>
 
-      <div class="card">
+    <div class="projects">
+      <div class="card fade-in fade-in-delay-1">
         <h3>Secure File Transfer</h3>
         <p>Java Spring Boot & React app for encrypted file uploads/downloads.</p>
         <div class="tags">
@@ -161,7 +196,7 @@
         <a class="link" href="https://github.com/yourusername/secure-file-transfer" target="_blank">View on GitHub →</a>
       </div>
 
-      <div class="card">
+      <div class="card fade-in fade-in-delay-2">
         <h3>AI Realtor Assistant</h3>
         <p>Lead generation tool using Zapier, Node.js and PostgreSQL backend.</p>
         <div class="tags">
@@ -172,7 +207,7 @@
         <a class="link" href="https://github.com/yourusername/ai-realtor" target="_blank">View on GitHub →</a>
       </div>
 
-      <div class="card">
+      <div class="card fade-in fade-in-delay-3">
         <h3>Productivity Bot</h3>
         <p>Botpress-based assistant that schedules meetings and helps with time blocking.</p>
         <div class="tags">
@@ -182,7 +217,6 @@
         </div>
         <a class="link" href="https://github.com/yourusername/productivity-bot" target="_blank">View on GitHub →</a>
       </div>
-
     </div>
   </section>
 
