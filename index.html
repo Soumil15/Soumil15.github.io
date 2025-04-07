@@ -3,53 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Software Engineer</title>
+  <title>Your Name | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    :root {
+      --bg: #0e1012;
+      --text: #ffffff;
+      --card: #1a1d21;
+      --primary: #3b82f6;
+      --tag: #2e333a;
+    }
+
+    * {
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
-      color: #333;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
     header {
-      background: #111;
-      color: white;
-      padding: 2rem;
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    header p {
+      color: #aaa;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
       text-align: center;
     }
-    section {
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-    }
+
     .projects {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
     }
-    .project {
-      background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+
+    .card {
+      background-color: var(--card);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
     }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: #bbb;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: var(--tag);
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      color: #ccc;
+    }
+
+    .link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
     footer {
       text-align: center;
-      padding: 1rem;
-      background: #eee;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    @media (max-width: 600px) {
-      .projects {
-        grid-template-columns: 1fr;
-      }
+      padding: 2rem 1rem;
+      color: #555;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -57,48 +118,56 @@
 
   <header>
     <h1>Your Name</h1>
-    <p>Software Engineer | Building cool stuff with code</p>
+    <p>Software Engineer • Full-stack Developer • Cloud Enthusiast</p>
   </header>
 
   <section>
-    <h2>About Me</h2>
-    <p>
-      I'm a recent software engineering graduate passionate about full-stack development,
-      clean code, and solving real-world problems. I love working with Java, React, and anything cloud.
+    <h2>Portfolio</h2>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">
+      Here's some of my recent work across web, AI, and full-stack projects.
     </p>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
     <div class="projects">
-      <div class="project">
-        <h3>Secure File Transfer App</h3>
-        <p>A Java Spring + React app for encrypted file uploads and downloads.</p>
-        <a href="https://github.com/yourusername/secure-file-transfer">View on GitHub</a>
+
+      <div class="card">
+        <h3>Secure File Transfer</h3>
+        <p>Java Spring Boot & React app for encrypted file uploads/downloads.</p>
+        <div class="tags">
+          <span class="tag">Java</span>
+          <span class="tag">Spring</span>
+          <span class="tag">React</span>
+        </div>
+        <a class="link" href="https://github.com/yourusername/secure-file-transfer" target="_blank">View on GitHub</a>
       </div>
-      <div class="project">
+
+      <div class="card">
         <h3>AI Realtor Assistant</h3>
-        <p>An AI-powered lead management tool using Zapier, PostgreSQL, and Node.js.</p>
-        <a href="https://github.com/yourusername/ai-realtor">View on GitHub</a>
+        <p>Lead generation tool powered by Zapier, PostgreSQL & Node.js backend.</p>
+        <div class="tags">
+          <span class="tag">Node.js</span>
+          <span class="tag">Zapier</span>
+          <span class="tag">PostgreSQL</span>
+        </div>
+        <a class="link" href="https://github.com/yourusername/ai-realtor" target="_blank">View on GitHub</a>
       </div>
-      <!-- Add more projects here -->
+
+      <div class="card">
+        <h3>Personal Productivity Bot</h3>
+        <p>Chatbot that arranges meetings and schedules tasks using Botpress & APIs.</p>
+        <div class="tags">
+          <span class="tag">Botpress</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">APIs</span>
+        </div>
+        <a class="link" href="https://github.com/yourusername/productivity-bot" target="_blank">View on GitHub</a>
+      </div>
+
+      <!-- Add more cards here -->
+
     </div>
   </section>
 
-  <section>
-    <h2>Skills</h2>
-    <p>Java | React | Spring Boot | Node.js | PostgreSQL | Git | REST APIs | Firebase</p>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername">yourusername</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">yourprofile</a></p>
-  </section>
-
   <footer>
-    <p>© 2025 Your Name. Built with ❤️ and GitHub Pages.</p>
+    © 2025 Your Name — Designed with ❤️ and deployed on GitHub Pages.
   </footer>
 
 </body>
