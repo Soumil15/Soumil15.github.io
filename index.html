@@ -7,13 +7,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --header-bg: #f5f7fa;
-      --card-bg: #fafafa;
-      --card-shadow: rgba(0, 0, 0, 0.08);
-      --divider: #111;
-      --tag-bg: #e0e0e0;
-      --accent: #111;
-      --text-light: #555;
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #555;
+      --gray: #f6f6f6;
+      --black: #111111;
+      --white: #ffffff;
+      --accent: #333;
+      --tag-bg: #eee;
     }
 
     * {
@@ -28,46 +29,9 @@
 
     body {
       font-family: 'Manrope', sans-serif;
-      background-color: white;
-      color: var(--accent);
-      line-height: 1.6;
-    }
-
-    /* Animations */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-
-    .fade-in-delay-1 { animation-delay: 0.2s; }
-    .fade-in-delay-2 { animation-delay: 0.4s; }
-    .fade-in-delay-3 { animation-delay: 0.6s; }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Header Section */
-    header {
-      background: var(--header-bg);
-      text-align: center;
-      padding: 4rem 1rem 3rem;
-      border-bottom: 1px solid #ddd;
-    }
-
-    header h1 {
-      font-size: 2.75rem;
-      font-weight: 800;
-    }
-
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
-      color: var(--text-light);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
 
     section {
@@ -86,24 +50,74 @@
     .divider {
       width: 60px;
       height: 3px;
-      background: var(--divider);
+      background: var(--text);
       margin: 0.5rem auto 2rem;
       border-radius: 3px;
-      animation: growBar 1s ease-out;
     }
 
-    @keyframes growBar {
-      from { width: 0; }
-      to { width: 60px; }
-    }
-
-    .intro-text {
+    /* Header */
+    header {
+      background: var(--black);
+      color: var(--white);
       text-align: center;
-      color: var(--text-light);
-      max-width: 600px;
-      margin: 0 auto 2.5rem;
+      padding: 4rem 1rem 3rem;
     }
 
+    header h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      color: #ccc;
+    }
+
+    /* About */
+    .about p {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+    /* Skills */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .skill-tag {
+      background-color: var(--tag-bg);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+
+    /* Resume */
+    .resume-button {
+      display: block;
+      width: fit-content;
+      margin: 2rem auto 0;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: 0.3s ease;
+    }
+
+    .resume-button:hover {
+      background-color: #333;
+    }
+
+    /* Portfolio */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -111,26 +125,19 @@
     }
 
     .card {
-      background-color: var(--card-bg);
+      background-color: var(--gray);
       padding: 1.5rem;
       border-radius: 1rem;
-      box-shadow: 0 6px 16px var(--card-shadow);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
     }
 
     .card h3 {
       font-size: 1.25rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
     }
 
     .card p {
-      color: var(--text-light);
+      color: var(--muted);
       margin-bottom: 1rem;
     }
 
@@ -147,19 +154,47 @@
       border-radius: 999px;
       font-size: 0.75rem;
       font-weight: 600;
-      color: #333;
+      color: #444;
     }
 
     .link {
-      display: inline-block;
-      color: var(--accent);
+      color: var(--text);
       font-weight: 600;
-      font-size: 0.9rem;
       text-decoration: none;
     }
 
     .link:hover {
       text-decoration: underline;
+    }
+
+    /* Contact Form */
+    form {
+      max-width: 600px;
+      margin: 2rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.75rem 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 0.75rem 1rem;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #222;
     }
 
     footer {
@@ -168,60 +203,93 @@
       padding: 2rem 1rem;
       font-size: 0.9rem;
       color: #777;
-      margin-top: 4rem;
     }
   </style>
 </head>
 <body>
 
-  <header class="fade-in">
+  <header>
     <h1>Soumil Thete</h1>
     <p>Software Engineer • Full-stack Developer • ML Enthusiast</p>
   </header>
 
-  <section>
-    <h2 class="fade-in">Portfolio</h2>
+  <section class="about">
+    <h2>About Me</h2>
     <div class="divider"></div>
-    <p class="intro-text fade-in">Some recent work across AI, full-stack applications, and automation tools.</p>
+    <p>
+      I'm a passionate full-stack developer focused on building clean, secure, and efficient applications. My interests lie in AI-driven solutions, web apps, and system design. Outside of coding, I love reading tech blogs, mentoring juniors, and staying caffeinated.
+    </p>
+  </section>
 
+  <section class="skills">
+    <h2>Skills</h2>
+    <div class="divider"></div>
+    <div class="skills">
+      <div class="skill-tag">Java</div>
+      <div class="skill-tag">Spring Boot</div>
+      <div class="skill-tag">React</div>
+      <div class="skill-tag">Node.js</div>
+      <div class="skill-tag">PostgreSQL</div>
+      <div class="skill-tag">Zapier</div>
+      <div class="skill-tag">Botpress</div>
+      <div class="skill-tag">JavaScript</div>
+      <div class="skill-tag">Git</div>
+      <div class="skill-tag">REST APIs</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Resume</h2>
+    <div class="divider"></div>
+    <a class="resume-button" href="resume.pdf" target="_blank">Download My Resume</a>
+  </section>
+
+  <section>
+    <h2>Portfolio</h2>
+    <div class="divider"></div>
     <div class="projects">
-      <div class="card fade-in fade-in-delay-1">
+      <div class="card">
         <h3>Secure File Transfer</h3>
         <p>Java Spring Boot & React app for encrypted file uploads/downloads.</p>
         <div class="tags">
-          <span class="tag">Java</span>
-          <span class="tag">Spring</span>
-          <span class="tag">React</span>
+          <span class="tag">Java</span><span class="tag">Spring</span><span class="tag">React</span>
         </div>
-        <a class="link" href="https://github.com/yourusername/secure-file-transfer" target="_blank">View on GitHub →</a>
+        <a class="link" href="#">View on GitHub →</a>
       </div>
 
-      <div class="card fade-in fade-in-delay-2">
+      <div class="card">
         <h3>AI Realtor Assistant</h3>
         <p>Lead generation tool using Zapier, Node.js and PostgreSQL backend.</p>
         <div class="tags">
-          <span class="tag">Node.js</span>
-          <span class="tag">Zapier</span>
-          <span class="tag">PostgreSQL</span>
+          <span class="tag">Zapier</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span>
         </div>
-        <a class="link" href="https://github.com/yourusername/ai-realtor" target="_blank">View on GitHub →</a>
+        <a class="link" href="#">View on GitHub →</a>
       </div>
 
-      <div class="card fade-in fade-in-delay-3">
+      <div class="card">
         <h3>Productivity Bot</h3>
         <p>Botpress-based assistant that schedules meetings and helps with time blocking.</p>
         <div class="tags">
-          <span class="tag">Botpress</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">APIs</span>
+          <span class="tag">Botpress</span><span class="tag">JavaScript</span><span class="tag">APIs</span>
         </div>
-        <a class="link" href="https://github.com/yourusername/productivity-bot" target="_blank">View on GitHub →</a>
+        <a class="link" href="#">View on GitHub →</a>
       </div>
     </div>
   </section>
 
+  <section>
+    <h2>Contact</h2>
+    <div class="divider"></div>
+    <form action="https://formspree.io/f/mnqlyrbo" method="POST">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <textarea name="message" placeholder="Your message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
   <footer>
-    © 2025 Soumil Thete — Designed with ❤️ and deployed via GitHub Pages
+    © 2025 Soumil Thete — Built with ❤️ and deployed via GitHub Pages
   </footer>
 
 </body>
